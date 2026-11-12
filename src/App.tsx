@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { api } from './services/api';
 import {
   SystemSettings,
@@ -511,6 +512,7 @@ export default function App() {
         verifyToken={verifyToken}
         setVerifyToken={setVerifyToken}
       />
+      <SpeedInsights />
     </ToastProvider>
   );
 }
