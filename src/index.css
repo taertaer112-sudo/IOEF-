@@ -1,0 +1,97 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Cairo', 'Montserrat', system-ui, -apple-system, sans-serif;
+    --font-en: 'Montserrat', 'Cairo', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --ioef-navy: #040B1A;
+    --ioef-royal: #1E3A8A;
+    --ioef-gold: #F59E0B;
+  }
+  body {
+    font-family: var(--font-sans);
+    background-color: #030712;
+    color: #F8FAFC;
+  }
+  .font-en, [dir="ltr"] {
+    font-family: var(--font-en);
+  }
+}
+
+/* Custom scrollbars and sleek utility classes */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #040B1A;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E3A8A;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D97706;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes subtle-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px -3px rgba(245, 158, 11, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 25px 0px rgba(245, 158, 11, 0.35);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-subtle-glow {
+  animation: subtle-glow 4s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 5s ease-in-out infinite;
+}
+
+/* Touch active feedback for mobile */
+@media (hover: none) {
+  button:active, a:active {
+    opacity: 0.85;
+    transform: scale(0.98);
+  }
+}
+
+/* Clean print formatting for Digital Membership Cards */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #040b1a !important;
+  }
+  header, footer, nav, .no-print {
+    display: none !important;
+  }
+  #ioef-printable-membership-card {
+    box-shadow: none !important;
+    margin: 0 auto !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+

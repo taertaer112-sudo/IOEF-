@@ -1,0 +1,6 @@
+{
+  "name": "الاتحاد الدولي للرياضات الإلكترونية IOEF",
+  "description": "المنصة الرسمية المعتمدة للاتحاد الدولي للرياضات الإلكترونية IOEF لتنظيم بطولات eFootball والدوريات الوطنية الستة والتحقق الذكي من التشكيلات.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
